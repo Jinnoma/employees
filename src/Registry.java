@@ -8,9 +8,12 @@ public class Registry {
 
     }
 
-    public void addOfficeEmployee(OfficeEmployee officeEmployee){
-//        OfficeEmployee officeEmployee = new OfficeEmployee("przemek", "Guzek",30, 1, 123, 60, 234);
-        employees.add(officeEmployee);
+    public void addEmployee(Object employee){
+        employees.add(employee);
+    }
+
+    public Object getEmployee(int index){
+        return employees.get(index);
     }
 
 }

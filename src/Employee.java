@@ -1,11 +1,12 @@
 public class Employee {
-    public String firstName;
+    private String firstName;
     private String lastName;
     private int age;
-    private String experience;
+    private int experience;
     private Address address;
 
-    public Employee(String firstName, String lastName, int age, String experience, Address address) {
+
+    public Employee(String firstName, String lastName, int age, int experience, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -24,4 +25,21 @@ public class Employee {
     public String getCity(String city){
         return address.getCity();
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
 }

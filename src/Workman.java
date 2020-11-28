@@ -17,10 +17,10 @@ public class Workman extends Employee {
         }
         this.strength = strength;
     }
+
     public float getCorporationValue() {
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        String str = decimalFormat.format((float)super.getExperience() * (float)this.strength / (float)super.getAge());
+        String str = decimalFormat.format((float) super.getExperience() * (float) this.strength / (float) super.getAge());
         return Float.parseFloat(str);
     }
-
 }

@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Registry {
 
@@ -9,6 +10,22 @@ public class Registry {
 
     public void addEmployee(Employee employee) {
         employees.add(employee);
+    }
+
+    public void addManyEmployees(Employee... employee) {
+        for (Employee emp : employee) {
+            employees.add(emp);
+        }
+    }
+
+    public List<String> sortByMultiple() {
+        List<String> sortedEmployees = new ArrayList<>();
+        employees.sort(new SortByExpAgeName());
+        for (Employee emp : employees) {
+            sortedEmployees.add(emp.getFirstName() + " " + emp.getLastName() + ", Exp: " + emp.getExperience() +
+                    ", Age: " + emp.getAge() + ", Name: " + emp.getLastName());
+        }
+        return sortedEmployees;
     }
 
     public Employee getEmployee(int index) {
@@ -46,25 +63,4 @@ public class Registry {
         }
         return employeesWithCorpValue;
     }
-
-
-    public List<String> sortEmployees(){
-        ArrayList<String> sortedEmployees = new ArrayList<>();
-        employees.sort(Comparator.comparing(Employee::getExperience).reversed());
-        for (Employee emp : employees){
-            sortedEmployees.add(emp.getFirstName() + " " + emp.getLastName() + ", Experience: " + emp.getExperience());
-        }
-        employees.sort(Comparator.comparing(Employee::getAge));
-        for (Employee emp : employees){
-            sortedEmployees.add(emp.getFirstName() + " " + emp.getLastName() + ", Age: " + emp.getAge());
-        }
-        employees.sort(Comparator.comparing(Employee::getLastName));
-        for (Employee emp : employees){
-            sortedEmployees.add(emp.getFirstName() + " " + emp.getLastName() + ", Name: " + emp.getLastName());
-        }
-        return sortedEmployees;
-    }
 }
-
-
-

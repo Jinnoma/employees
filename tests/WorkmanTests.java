@@ -20,4 +20,13 @@ public class WorkmanTests {
         corporationValue = workman.getCorporationValue();
         assertEquals(10, corporationValue, 2);
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void setTooHighStrength() {
+        workman.setStrength(101);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void setTooLowStrength() {
+        workman.setStrength(-1);
+    }
 }

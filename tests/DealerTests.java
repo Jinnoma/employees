@@ -25,5 +25,4 @@ public class DealerTests {
     public void setIncorrectProvisionValue() {
         dealer.setProvision(-1);
     }
-
 }
